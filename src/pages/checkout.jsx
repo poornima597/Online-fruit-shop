@@ -36,7 +36,7 @@ const LoginStep = () => {
   const authDispatch = useContext(AuthDispatchContext);
   const checkoutDispatch = useContext(CheckoutDispatchContext);
   const handleContinueShopping = () => {
-    history.push("/");
+    history.push("/fruits");
   };
   const handleLoginAsDiffUser = () => {
     signOut(authDispatch);

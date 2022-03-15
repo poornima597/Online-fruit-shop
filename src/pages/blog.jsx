@@ -29,7 +29,7 @@ export default function Blog() {
               <p>
                 alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
               </p>
-              <a href="">
+              <a href="" className='read_more'>
                 Read More
               </a>
             </div>
@@ -51,7 +51,7 @@ export default function Blog() {
               <p>
                 alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
               </p>
-              <a href="">
+              <a href="" className='read_more'>
                 Read More
               </a>
             </div>

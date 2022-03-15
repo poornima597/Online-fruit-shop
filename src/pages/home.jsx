@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useContext, useEffect } from "react";
 import {Link} from 'react-router-dom';
 import slider from '../assets/images/slider-img.png';
 import img1 from '../assets/images/o1.jpg';
@@ -15,16 +15,14 @@ import blog1 from '../assets/images/b1.jpg';
 import blog2 from '../assets/images/b2.jpg';
 import testimonial from '../assets/images/client.jpg';
 import locmap from '../assets/images/loc.png';
+import { CartDispatchContext, addToCart } from "../contexts/cart";
 
-export default function Home() {
+function Home() {
+ 
   return (
     <>
       <section className="slider_section ">
-        <div
-          id="customCarousel1"
-          className="carousel slide"
-          data-ride="carousel"
-        >
+        <div  id="customCarousel1" className="carousel slide" data-ride="carousel">
           <div className="carousel-inner">
             <div className="carousel-item active">
               <div className="container ">
@@ -134,7 +132,6 @@ export default function Home() {
           </ol>
         </div>
       </section>
-
       <section className="offer_section">
         <div className="container-fluid">
           <div className="row">
@@ -165,157 +162,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
-
-      <section className="product_section layout_padding">
-        <div className="container">
-          <div className="heading_container heading_center">
-            <h2>Our Fruits</h2>
-            <p>
-              which don't look even slightly believable. If you are going to use
-              a passage of Lorem Ipsum, you need to be sure there isn't an
-            </p>
-          </div>
-          <div className="row">
-            <div className="col-sm-6 col-lg-4">
-              <div className="box">
-                <div className="img-box">
-                  <img src={fruit1} alt="Fruit one" />
-                </div>
-                <div className="detail-box">
-                  <span className="rating">
-                    <i className="fa fa-star" aria-hidden="true"></i>
-                    <i className="fa fa-star" aria-hidden="true"></i>
-                    <i className="fa fa-star" aria-hidden="true"></i>
-                    <i className="fa fa-star" aria-hidden="true"></i>
-                    <i className="fa fa-star-half-o" aria-hidden="true"></i>
-                  </span>
-                  <Link to="fruits">Orange</Link>
-                  <div className="price_box">
-                    <h6 className="price_heading">
-                      <span>$</span> 10.00
-                    </h6>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-sm-6 col-lg-4">
-              <div className="box">
-                <div className="img-box">
-                  <img src={fruit2} alt="Fruit two" />
-                </div>
-                <div className="detail-box">
-                  <span className="rating">
-                    <i className="fa fa-star" aria-hidden="true"></i>
-                    <i className="fa fa-star" aria-hidden="true"></i>
-                    <i className="fa fa-star" aria-hidden="true"></i>
-                    <i className="fa fa-star" aria-hidden="true"></i>
-                    <i className="fa fa-star-half-o" aria-hidden="true"></i>
-                  </span>
-                  <Link to="fruits">Durian</Link>
-                  <div className="price_box">
-                    <h6 className="price_heading">
-                      <span>$</span> 10.00
-                    </h6>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-sm-6 col-lg-4">
-              <div className="box">
-                <div className="img-box">
-                  <img src={fruit3} alt="Fruit three" />
-                </div>
-                <div className="detail-box">
-                  <span className="rating">
-                    <i className="fa fa-star" aria-hidden="true"></i>
-                    <i className="fa fa-star" aria-hidden="true"></i>
-                    <i className="fa fa-star" aria-hidden="true"></i>
-                    <i className="fa fa-star" aria-hidden="true"></i>
-                    <i className="fa fa-star-half-o" aria-hidden="true"></i>
-                  </span>
-                  <Link to="fruits">Kiwi</Link>
-                  <div className="price_box">
-                    <h6 className="price_heading">
-                      <span>$</span> 10.00
-                    </h6>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-sm-6 col-lg-4">
-              <div className="box">
-                <div className="img-box">
-                  <img src={fruit4} alt="Fruit four" />
-                </div>
-                <div className="detail-box">
-                  <span className="rating">
-                    <i className="fa fa-star" aria-hidden="true"></i>
-                    <i className="fa fa-star" aria-hidden="true"></i>
-                    <i className="fa fa-star" aria-hidden="true"></i>
-                    <i className="fa fa-star" aria-hidden="true"></i>
-                    <i className="fa fa-star-half-o" aria-hidden="true"></i>
-                  </span>
-                  <Link to="fruits">Mango</Link>
-                  <div className="price_box">
-                    <h6 className="price_heading">
-                      <span>$</span> 10.00
-                    </h6>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-sm-6 col-lg-4">
-              <div className="box">
-                <div className="img-box">
-                  <img src={fruit5} alt="Fruit five" />
-                </div>
-                <div className="detail-box">
-                  <span className="rating">
-                    <i className="fa fa-star" aria-hidden="true"></i>
-                    <i className="fa fa-star" aria-hidden="true"></i>
-                    <i className="fa fa-star" aria-hidden="true"></i>
-                    <i className="fa fa-star" aria-hidden="true"></i>
-                    <i className="fa fa-star-half-o" aria-hidden="true"></i>
-                  </span>
-                  <Link to="fruits">Banana</Link>
-                  <div className="price_box">
-                    <h6 className="price_heading">
-                      <span>$</span> 10.00
-                    </h6>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="col-sm-6 col-lg-4">
-              <div className="box">
-                <div className="img-box">
-                  <img src={fruit6} alt="Fruit six" />
-                </div>
-                <div className="detail-box">
-                  <span className="rating">
-                    <i className="fa fa-star" aria-hidden="true"></i>
-                    <i className="fa fa-star" aria-hidden="true"></i>
-                    <i className="fa fa-star" aria-hidden="true"></i>
-                    <i className="fa fa-star" aria-hidden="true"></i>
-                    <i className="fa fa-star-half-o" aria-hidden="true"></i>
-                  </span>
-                  <Link to="fruits">Apple</Link>
-                  <div className="price_box">
-                    <h6 className="price_heading">
-                      <span>$</span> 10.00
-                    </h6>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="btn-box">
-            <Link to="fruits">Show more</Link>
-          </div>
-        </div>
-      </section>
-
+      </section>      
       <section className="about_section layout_padding">
         <div className="container  ">
           <div className="row">
@@ -342,7 +189,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       <section className="blog_section layout_padding">
         <div className="container">
           <div className="heading_container">
@@ -601,3 +447,5 @@ export default function Home() {
     </>
   );
 }
+
+export default Home;

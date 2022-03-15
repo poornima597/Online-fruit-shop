@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import logo from '../assets/images/logo.png';
 
 const AuthLayout = ({ children }) => {
   return (
@@ -7,11 +8,7 @@ const AuthLayout = ({ children }) => {
       <div className="wrapper">
         <div className="auth-brand">
           <Link to="/">
-            <img
-              className="logo"
-              src="https://res.cloudinary.com/sivadass/image/upload/v1493547373/dummy-logo/Veggy.png"
-              alt="Veggy Brand Logo"
-            />
+          <img src={logo} alt="Delicious Fruits" width="60px" />
           </Link>
         </div>
         <div>{children}</div>

@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Formik, Form, Field } from "formik";
-import { useHistory, useLocation } from "react-router-dom";
+import { Link, useHistory, useLocation } from "react-router-dom";
 import * as Yup from "yup";
 import _get from "lodash.get";
 import { AuthDispatchContext, signIn } from "contexts/auth";
@@ -22,7 +22,8 @@ const AuthPage = () => {
   };
 
   const goToRegister = (e) => {
-    e.preventDefault();
+    history.push("/");
+    e.preventDefault();   
   };
 
   const signInSuccess = (userData) => {
@@ -30,7 +31,7 @@ const AuthPage = () => {
     if (fromUrl) {
       history.push(fromUrl);
     } else {
-      history.push("/");
+      history.push("/register");
     }
   };
 
@@ -77,9 +78,9 @@ const AuthPage = () => {
 
           <p>
             New here?{" "}
-            <a href="/#" onClick={goToRegister}>
+            <Link to="/register" >
               Sign Up Now!
-            </a>
+            </Link>
           </p>
         </Form>
       )}

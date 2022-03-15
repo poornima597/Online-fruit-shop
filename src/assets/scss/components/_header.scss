@@ -362,3 +362,26 @@ span.spanTxt2 {
   white-space: nowrap;
   margin-left: 20px;
 }
+.btn-box {
+  margin-top:15px !important;
+}
+.read_more{
+  margin-top:15px !important;
+}
+.load-more{
+  display: inline-block;
+  padding: 10px 0;
+  background-color: #f89646;
+  color: #ffffff;
+  border-radius: 5px;
+  border: 1px solid #f89646;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  height: auto;
+  width: 120px;
+  margin: 12px auto;
+}
+.load-more:hover{
+  background-color: transparent;
+    color: #f89646;
+}

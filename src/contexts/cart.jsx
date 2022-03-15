@@ -51,6 +51,7 @@ const reducer = (state, action) => {
         ...initialState
       };
     default:
+      
       throw new Error(`Unknown action: ${action.type}`);
   }
 };

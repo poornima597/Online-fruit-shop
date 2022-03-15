@@ -21,6 +21,8 @@ const Header = (props) => {
   const cartTotal = cartItems
     .map((item) => item.price * item.quantity)
     .reduce((prev, current) => prev + current, 0);
+    
+    
 
   const handleSearchInput = (event) => {
     return setSearchKeyword(commonDispatch, event.target.value);
@@ -44,7 +46,7 @@ const Header = (props) => {
         <Navbar /> 
         <ul className="navbar-nav  ml-auto">
           <li className="nav-item">
-            <Link to={`${user ? "/" : "/login"}`} className="nav-link headerLink">
+            <Link to={`${user ? "/" : "/auth"}`} className="nav-link headerLink">
               <div onClick={handleAuth} className="nav-link">
                 <span className="spanTxt2">{user ? "Sign Out" : "Sign In"}</span>
               </div>
@@ -53,10 +55,10 @@ const Header = (props) => {
         </ul>
         <div className="w-100">
           <div className="col-lg-12 justify-content-end">
-            <Link to={`${user ? "/" : "/login"}`} className="headerLink">
+            <Link to={`${user ? "/" : "/auth"}`} className="headerLink">
               <div
                 onClick={handleAuth}
-                className="nav-link d-flex justify-content-end pr-0">
+                className="nav-link d-flex justify-content-end pb-2 p-0">
                 <span className="spanTxt1">
                   Hello, {user ? user.email : "Guest!"}
                 </span>                

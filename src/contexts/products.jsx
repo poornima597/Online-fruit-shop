@@ -13,11 +13,13 @@ export const ProductsDispatchContext = createContext();
 const reducer = (state, action) => {
   switch (action.type) {
     case "GET_PRODUCTS_REQUEST":
+        
       return {
-        ...state,
+        ...state,        
         isLoading: true,
-        isLoaded: false
+        isLoaded: false,        
       };
+      
     case "GET_PRODUCTS_SUCCESS":
       return {
         ...state,
@@ -52,8 +54,7 @@ export const getProducts = (dispatch) => {
   dispatch({
     type: "GET_PRODUCTS_REQUEST"
   });
-  const url =
-    "https://61e66f83ce3a2d001735913d.mockapi.io/Articles";
+  const url = "https://61e66f83ce3a2d001735913d.mockapi.io/Articles";
   axios
     .get(url)
     .then((response) => {
